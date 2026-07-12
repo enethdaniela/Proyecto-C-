@@ -1,4 +1,5 @@
 #include "Audio.hpp"
+#include <cctype>
 
 Audio::Audio(int id, const std::string& titulo, int duracionSegundos, const std::string& rutaArchivo) : id(id), titulo(titulo), duracionSegundos(duracionSegundos), reproducciones(0), rutaArchivo(rutaArchivo) {};
 
@@ -45,7 +46,9 @@ void Audio::setDuracionSegundos(int segundos) {
     duracionSegundos = segundos;
 }
 
-void Audio::setRutaArchivo(const std::string& nuevaRuta) {}
+void Audio::setRutaArchivo(const std::string& nuevaRuta) {
+    std::string extensionEsperada = formatoEsperado(); 
+}
 
 void Audio::reproducirArchivo() const {}
 
